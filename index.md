@@ -1,29 +1,29 @@
 ### Welcome to TXC V2
 
-You can use the [editor on GitHub](https://github.com/myglobalidentity/tradexchain/edit/master/index.md) 
+Shortcut [editor on GitHub](https://github.com/myglobalidentity/tradexchain/edit/master/index.md) 
 
-TXC V2 is a Node version of the Tradexchain V1 PHP LAMP framework.Tradexchain is a Ethereum based + multiblockchain system for banks, governments, trading companies and supply chain to interact cost effectively and transparently.
+TXC V2 is a proposed Node version of the Tradexchain V1 PHP LAMP framework.Tradexchain is a Ethereum based + multiblockchain system for banks, governments, trading companies and supply chain to interact cost effectively and transparently.
 
-Main modules
--Importer 
--Exporter 
--Bank 
--Government 
--Admin (planned)
+Main front end modules
+-Importer - Apply for credit 
+-Exporter - Claim 
+-Bank - Monitor
+-Government- Tax and regulate
+ 
+Back end process - there are the operators available
+ 
 
-## Ethereum Blockchain 
-
-## Send/Read
+## 1. Ethereum Blockchain Send/Read
 https://github.com/myglobalidentity/etherwallet
 https://github.com/myglobalidentity/web3.js
 Read only
 https://etherscan.io/apis
 
-## Algo
+## 2. Cloud Algo
 It works with several preferred 3rd party tools Azure for hosting, Google Firebase for algo and Twilio for communication
 https://github.com/myglobalidentity/twilio-php
 
-### Smart Contract Example
+### 3. Ethereum Blockchain Smart Contract  
 
 Here is an example of a smart contract construct
 
@@ -201,8 +201,4 @@ contract Escrow {
 
 ```
 
-
-
-
-### Support or Contact
-
+ 

@@ -10,19 +10,18 @@ It has several modules -Importer -Exporter -Bank -Government -Admin
 
 It works with several 3rd party tools most notably Azure Google Firebase Twilio Ethereum Blockchain LAMP server
 
-### Markdown
+### Smart Contract Example
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Here is an example of a smart contract construct
 
 ```markdown
 Syntax highlighted code block
 
 # Header 1
 ## Header 2
-### Header 3
+
 
 - Bulleted
-- List
 
 1. Numbered
 2. List
@@ -30,9 +29,9 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
+
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 
 

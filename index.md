@@ -9,35 +9,25 @@ The main modules are
 -Exporter - Claim payment
 -Government and Banks - Administrate, faciliate
 
-## 1a. Read up. Your should start learning by reading tutorials. There are more out there, find them
-
+## 1a. Read up. Your should start learning how the blockchain works
+https://etherscan.io/apis
 https://mlgblockchain.com/ethereum-tutorials.html
-
 
 ## 1b. Then create your own wallet
 
-Create your new accounts at Ethereum wallet https://github.com/myglobalidentity/etherwallet
-Make a viewer using our sample code which uses this API https://etherscan.io/apis
+Create your new account at Ethereum wallet https://github.com/myglobalidentity/etherwallet
+Explore its functions
 Practise fund transfer with you to get you comfortable with transfers, storing funds, etc
 
+# Ability to perform solid API development
 
-## 2. Test A : Ability to perform solid API development
+Get a sample transaction from our sandbox api https://audpquvmdaownca.form.io/lc/submission/58eb4038e3210d00f1dc1050
+Check if it is a fraud. If fraud - reject If not fraud, proceed to display account details using one of our banking sandbox api
+Write it to the blockchain using web3.js https://github.com/myglobalidentity/web3.js
 
-Create an application page to call all these APIs below. We will provide the authentication seperately 
+# Ability to manage Smart Contract, deploy it, call it and show in a demo to us
 
-Bank Sandbox API - account details
-
-Google Firebase - processing logic 
-
-Twilio - Communication  
-https://github.com/myglobalidentity/twilio-php
-
-The page will pull in account details, process logic and send out the communication ouput in a text message
-
-### 2. Test B : Ability to manage Smart Contract, deploy it, call it and show in a demo to us
-
-Create an application form using this dependency https://github.com/myglobalidentity/web3.js
-Using the form that show how an exporter or importer interacts with the smart contract (sample below) through this form
+Create an application form that shows how an exporter or importer interacts with the smart contract (sample below) through this form
 
 Smart Contract logic - Trading bond
 Buyer initiates contract with balance with his address. Buyer and Government can send payment to contract to pay seller if satisfied. Seller and Government can refund to buyer if fail to deliver. Additional logic such as time and event listenings will be helpful

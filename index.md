@@ -17,7 +17,6 @@ https://mlgblockchain.com/ethereum-tutorials.html
 ## Wallet
 
 Create your new account at Ethereum wallet https://github.com/myglobalidentity/etherwallet
-
 Explore its functions. Practise fund transfer with you to get you comfortable with transfers, storing funds, etc
 
 # Ability to perform solid API development
@@ -26,9 +25,9 @@ Explore its functions. Practise fund transfer with you to get you comfortable wi
 
 Check fraud score using only REQUIRED fields from https://developer.mastercard.com/documentation/fraud-scoring-for-merchants/1#api-reference
 
-Set a score band to reject or accept and let us know why. Display the results in an attractive summary table - eject or accept
+Set a score band to reject or accept and let us know why. Display the results in an attractive summary table - reject or accept
 
-Write it to the blockchain using web3.js https://github.com/myglobalidentity/web3.js
+Write it to the blockchain using this JS file and GETH RPC node hosted on a server https://github.com/myglobalidentity/web3.js
 
 # Ability to manage Smart Contract, deploy it, call it and show in a demo to us
 

@@ -9,11 +9,12 @@ The main modules are
 -Exporter - Claim payment
 -Government and Banks - Administrate, faciliate
 
-## 1a. Read up. Your should start learning how the blockchain works
+## Learn.. Read up. Your should start learning how the blockchain works
+
 https://etherscan.io/apis
 https://mlgblockchain.com/ethereum-tutorials.html
 
-## 1b. Then create your own wallet
+## Wallet
 
 Create your new account at Ethereum wallet https://github.com/myglobalidentity/etherwallet
 
@@ -22,6 +23,7 @@ Explore its functions. Practise fund transfer with you to get you comfortable wi
 # Ability to perform solid API development
 
 ## Get transaction from our sandbox api https://audpquvmdaownca.form.io/lc/submission/58eb4038e3210d00f1dc1050
+
 Check fraud score using only REQUIRED fields from https://developer.mastercard.com/documentation/fraud-scoring-for-merchants/1#api-reference
 
 Set a score band to reject or accept and let us know why. Display the results in an attractive summary table - eject or accept

@@ -16,13 +16,16 @@ https://mlgblockchain.com/ethereum-tutorials.html
 ## 1b. Then create your own wallet
 
 Create your new account at Ethereum wallet https://github.com/myglobalidentity/etherwallet
-Explore its functions
-Practise fund transfer with you to get you comfortable with transfers, storing funds, etc
+
+Explore its functions. Practise fund transfer with you to get you comfortable with transfers, storing funds, etc
 
 # Ability to perform solid API development
 
-Get a sample transaction from our sandbox api https://audpquvmdaownca.form.io/lc/submission/58eb4038e3210d00f1dc1050
-Check if it is a fraud. If fraud - reject If not fraud, proceed to display account details using one of our banking sandbox api
+## Get transaction from our sandbox api https://audpquvmdaownca.form.io/lc/submission/58eb4038e3210d00f1dc1050
+Check fraud score using only REQUIRED fields from https://developer.mastercard.com/documentation/fraud-scoring-for-merchants/1#api-reference
+
+Set a score band to reject or accept and let us know why. Display the results in an attractive summary table - eject or accept
+
 Write it to the blockchain using web3.js https://github.com/myglobalidentity/web3.js
 
 # Ability to manage Smart Contract, deploy it, call it and show in a demo to us

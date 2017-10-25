@@ -1,4 +1,4 @@
-### Welcome to TXC Developer Training Lab
+### Welcome to Tradexchain
 
 Shortcut [editor on GitHub](https://github.com/myglobalidentity/tradexchain/edit/master/index.md) 
 

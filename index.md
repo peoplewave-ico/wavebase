@@ -2,14 +2,20 @@
 
 Shortcut [editor on GitHub](https://github.com/myglobalidentity/tradexchain/edit/master/index.md) 
 
-TXC is a LAMP web application stack that uses Ethereum blockchain system for banks, governments, trading companies and supply chain to interact in a cost effectively and transparently manner.
+UnbankedX is a LAMP web application stack that uses multi blockchain system for banks, governments, trading companies and supply chain to interact in a cost effectively and transparently manner.
 
 The main modules are 
 -Importer - Issue letter of credit 
 -Exporter - Claim payment
 -Government and Banks - Administrate, faciliate
+-Insurance
+-Consumer Credit
 
-## Learn.. Read up. Your should start learning how the blockchain works
+## Blockchains integrated
+
+Primary: Ethereum / Stellar / Ripple / NEO 
+Secondary : Bitcoin / Lisk / Cardano / 
+Future : To be added
 
 https://etherscan.io/apis
 https://mlgblockchain.com/ethereum-tutorials.html
@@ -31,7 +37,6 @@ Write it to the blockchain using this JS file and GETH RPC node hosted on a serv
 
 # Ability to manage Smart Contract, deploy it, call it and show in a demo to us
 
-Create an application form that shows how an exporter or importer interacts with the smart contract (sample below) through this form
 
 Smart Contract logic - Trading bond
 Buyer initiates contract with balance with his address. Buyer and Government can send payment to contract to pay seller if satisfied. Seller and Government can refund to buyer if fail to deliver. Additional logic such as time and event listenings will be helpful

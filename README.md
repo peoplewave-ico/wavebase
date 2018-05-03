@@ -1,4 +1,4 @@
-# Development of smart contract sample
+# Development of smart contract sample https://remix.ethereum.org
 
 pragma solidity ^0.4.11;
 

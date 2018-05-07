@@ -1,8 +1,6 @@
 # Development of smart contract sample https://remix.ethereum.org   https://ropsten.etherscan.io/address/0x70cd7c46dd938d13aa65baef73495b64eacfcc16
 https://www.myetherwallet.com/#contracts
 
-// Cannot see ABI fields 
-
 
 pragma solidity ^0.4.11;
 

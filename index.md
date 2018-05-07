@@ -1,85 +1,88 @@
-## Welcome to UnbankedX Fintech System
+pragma solidity ^0.4.11;
 
-Shortcut [editor on GitHub](https://github.com/myglobalidentity/tradexchain/edit/master/index.md) 
+contract PEOPLEWAVE { uint public _totalSupply = 1200000000000000000000000000;
 
-UnbankedX is a LAMP web application stack that uses multi blockchain system for banks, governments, trading companies and supply chain to interact in a cost effectively and transparently manner.
+string public constant symbol = "PWV";
+string public constant name = "Peoplewave";
+uint8 public constant decimals = 18;
 
-It is the world's first crypto robo banking system for the billions of unbanked and underbanked worldwide. Supported by a community from 70 countries and 730 cities as of March 2018
+address public owner;
+address public whitelistedContract;
+bool freeTransfer = false;
+mapping (address => uint256) balances;
+mapping (address => mapping (address => uint256)) allowed;
 
-## The main modules 
-
--Importer - Issue letter of credit 
--Exporter - Claim payment
--Government and Banks - Administrate, faciliate
--Insurance
--Consumer Credit
-
-## Blockchains integration rodmap 
-
-Primary: Ethereum / Stellar / Ripple / NEO 
-Secondary : Bitcoin / Lisk / Cardano / 
-Future : To be added
-
-https://etherscan.io/apis
-https://mlgblockchain.com/ethereum-tutorials.html
-
-## Wallets
-
-You would use the wallet from the blockchain of your choice. For example Ethereum -
-
-Create your new account at Ethereum wallet https://github.com/myglobalidentity/etherwallet
-Explore its functions. Practise fund transfer with you to get you comfortable with transfers, storing funds, etc
-
-
-
-## Example of Get transaction from our sandbox api https://audpquvmdaownca.form.io/lc/submission/58eb4038e3210d00f1dc1050
-
-Check fraud score using only REQUIRED fields from https://developer.mastercard.com/documentation/fraud-scoring-for-merchants/1#api-reference
-
-Set a score band to reject or accept and let us know why. Display the results in an attractive summary table - reject or accept
-
-Write it to the blockchain using this JS file and GETH RPC node hosted on a server https://github.com/myglobalidentity/web3.js
-
-# Example of Smart Contract 
-
-
-Smart Contract logic - Trading bond
-Buyer initiates contract with balance with his address. Buyer and Government can send payment to contract to pay seller if satisfied. Seller and Government can refund to buyer if fail to deliver. Additional logic such as time and event listenings will be helpful
-
-```markdown
-
-contract txcbond {
-    
-    // set key variables
-    address seller;
-    address buyer;
-    address gov;
-    
-    function txcaccounts() {
-        buyer = msg.sender;
-        seller = 0xf6deda468ba0aff0948bf96e17386df5ca642ae9;
-        gov = 0x8f4b387c804d79dc4d56f87e221351d67a37d177;
-    }
-    
-  
-    function finalize() {
-        if (msg.sender == buyer || msg.sender == gov) throw;
-        seller.send(this.balance);
-    }
-    
-    function refund() {
-        if (msg.sender == seller || msg.sender == gov) throw;
-        buyer.send(this.balance);        
-    }
-     
-    function getBalance() constant returns (uint) {
-    return this.balance;
-  }
-  
+function PEOPLEWAVE(address _multisig) {
+    balances[_multisig] = _totalSupply;
+    owner = _multisig;
 }
 
-```
+modifier onlyOwner() {
+    require(msg.sender == owner);
+    _;
+}
 
+modifier ownerOrEnabledTransfer() {
+    require(freeTransfer || msg.sender == owner || msg.sender == whitelistedContract);
+    _;
+}
 
+function enableTransfer() ownerOrEnabledTransfer() {
+    freeTransfer = true;
+}
 
- 
+function totalSupply() constant returns (uint256 totalSupply){
+    return _totalSupply;
+}
+
+function balanceOf(address _owner) constant returns (uint256 balance) {
+    return balances[_owner];
+}
+
+modifier onlyPayloadSize(uint size) {
+    assert(msg.data.length == size + 4);
+    _;
+}
+
+function transfer(address _to, uint256 _value) ownerOrEnabledTransfer public returns (bool) {
+    require(
+    balances[msg.sender]>= _value
+    && _value > 0
+    );
+    balances[msg.sender] -= _value;
+    balances[_to] += _value;
+    Transfer(msg.sender, _to, _value);
+    return true;
+}
+function transferFrom(address _from, address _to, uint256 _value) ownerOrEnabledTransfer public returns (bool success) {
+    require(
+    allowed[_from][msg.sender]  >= _value
+    && balances[_from] >= _value
+    && _value > 0
+    );
+    balances[_from] -= _value;
+    balances[_to] += _value;
+    allowed[_from][msg.sender] -= _value;
+    Transfer(_from, _to, _value);
+    return true;
+}
+function approve(address _spender, uint256 _value) public returns (bool success) {
+    // To change the approve amount you first have to reduce the addresses`
+    //  allowance to zero by calling `approve(_spender, 0)` if it is not
+    //  already 0 to mitigate the race condition described here:
+    //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+    require(_value == 0 || allowed[msg.sender][_spender] == 0);
+    allowed[msg.sender][_spender] = _value;
+    Approval(msg.sender, _spender, _value);
+    return true;
+}
+function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
+    return allowed[_owner][_spender];
+}
+
+function transferOwnership(address newOwner) public onlyOwner returns (bool) {
+  require(newOwner != address(0));
+  owner = newOwner;
+}
+event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+event Transfer(address indexed _from, address indexed _to, uint256 _value);

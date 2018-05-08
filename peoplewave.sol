@@ -1,9 +1,9 @@
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.18;
 
-contract PEOPLEWAVE { uint public _totalSupply = 1200000000000000000000000000;
+contract Peoplewave { uint public _totalSupply = 1200000000000000000000000000;
 
 string public constant symbol = "PWV";
-string public constant name = "Peoplewave";
+string public constant name = "Peoplewave Token";
 uint8 public constant decimals = 18;
 
 address public owner;
@@ -12,7 +12,7 @@ bool freeTransfer = false;
 mapping (address => uint256) balances;
 mapping (address => mapping (address => uint256)) allowed;
 
-function PEOPLEWAVE(address _multisig) {
+function VERIME(address _multisig) {
     balances[_multisig] = _totalSupply;
     owner = _multisig;
 }
@@ -79,7 +79,10 @@ function approve(address _spender, uint256 _value) public returns (bool success)
 function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
     return allowed[_owner][_spender];
 }
-
+function changeWhitelistedContract(address newAddress) public onlyOwner returns (bool) {
+    require(newAddress != address(0));
+    whitelistedContract = newAddress;
+}
 function transferOwnership(address newOwner) public onlyOwner returns (bool) {
   require(newOwner != address(0));
   owner = newOwner;

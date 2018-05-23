@@ -12,7 +12,7 @@ bool freeTransfer = false;
 mapping (address => uint256) balances;
 mapping (address => mapping (address => uint256)) allowed;
 
-function VERIME(address _multisig) {
+function PEOPLEWAVE(address _multisig) {
     balances[_multisig] = _totalSupply;
     owner = _multisig;
 }

@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.11;
 
 contract Peoplewave { uint public _totalSupply = 1200000000000000000000000000;
 
@@ -89,3 +89,4 @@ function transferOwnership(address newOwner) public onlyOwner returns (bool) {
 }
 event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 event Transfer(address indexed _from, address indexed _to, uint256 _value);
+}

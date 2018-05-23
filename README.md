@@ -13,7 +13,7 @@ contract PWTEST  {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
 
-    function VERIME(address _multisig) {
+    function PWTEST(address _multisig) {
         balances[_multisig] = _totalSupply;
         owner = _multisig;
     }
